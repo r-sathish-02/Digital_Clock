@@ -18,7 +18,6 @@ function updateClock() {
 
   const hrs = hours.toString().padStart(2, "0");
 
-  // Blinking colon
   const colon = now.getSeconds() % 2 === 0 ? ":" : '<span class="blink">:</span>';
 
   clock.innerHTML = `${hrs}${colon}${minutes}${colon}${seconds}`;
@@ -32,4 +31,4 @@ function updateClock() {
 }
 
 setInterval(updateClock, 1000);
-updateClock(); // Initial call
+updateClock();
