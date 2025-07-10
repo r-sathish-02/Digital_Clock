@@ -18,7 +18,10 @@ function updateClock() {
 
   const hrs = hours.toString().padStart(2, "0");
 
-  clock.innerHTML = `${hrs}:${minutes}:${seconds}`;
+  // Blinking colon
+  const colon = now.getSeconds() % 2 === 0 ? ":" : '<span class="blink">:</span>';
+
+  clock.innerHTML = `${hrs}${colon}${minutes}${colon}${seconds}`;
   ampm.textContent = is24Hour ? "" : session;
 
   const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -26,10 +29,7 @@ function updateClock() {
                       "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   const fullDate = `${dayNames[now.getDay()]}, ${monthNames[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`;
   dateEl.textContent = fullDate;
-
-  clock.style.transform = "scale(1.03)";
-  setTimeout(() => clock.style.transform = "scale(1)", 150);
 }
 
 setInterval(updateClock, 1000);
-updateClock();
+updateClock(); // Initial call
