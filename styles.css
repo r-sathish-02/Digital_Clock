@@ -1,8 +1,8 @@
 body {
   margin: 0;
-  padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #1e1e2f, #232946);
+  background-color: #1e1e2f;
+  color: #fff;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -10,58 +10,55 @@ body {
 }
 
 .container {
-  backdrop-filter: blur(15px);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  padding: 2.5rem 3.5rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
   text-align: center;
-  color: #ffffff;
-  min-width: 340px;
+  padding: 2rem 3rem;
+  background: #2b2b3c;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 h1 {
   font-size: 2.5rem;
-  margin-bottom: 0.3rem;
-  background: linear-gradient(45deg, #00f2fe, #4facfe);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #00ffe7;
 }
 
 .subtitle {
   font-size: 1rem;
-  color: #bbb;
   margin-bottom: 2rem;
+  color: #ccc;
 }
 
 #clock {
-  font-size: 3.8rem;
-  font-weight: 600;
+  font-size: 3.5rem;
   letter-spacing: 2px;
-  transition: all 0.2s ease-in-out;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.blink {
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
 }
 
 #ampm {
   font-size: 1.2rem;
-  color: #ffdf00;
-  margin-top: 0.5rem;
+  color: #ffea00;
+  margin-bottom: 0.5rem;
 }
 
 #date {
-  margin-top: 0.3rem;
   font-size: 1rem;
-  color: #ccc;
+  color: #aaa;
+  margin-bottom: 1rem;
 }
 
 .format-toggle {
-  margin-top: 1.5rem;
   font-size: 0.9rem;
   color: #ddd;
-}
-
-input[type="checkbox"] {
-  margin-right: 0.4rem;
-  accent-color: #00f2fe;
 }
